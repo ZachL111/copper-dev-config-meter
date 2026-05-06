@@ -1,0 +1,73 @@
+{
+  "repo": "copper-dev-config-meter",
+  "language": "Rust",
+  "category": "Developer tools",
+  "goal": "Build a Rust toolkit that studies config behavior through windowed input fixtures, with late-data behavior checks and bounded memory input sets.",
+  "review_model": {
+    "terms": [
+      "change width",
+      "diagnostic quality",
+      "review cost",
+      "safe rewrite"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "change width",
+      "signal": 61,
+      "slack": 40,
+      "drag": 14,
+      "confidence": 70,
+      "score": 190,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "diagnostic quality",
+      "signal": 71,
+      "slack": 47,
+      "drag": 8,
+      "confidence": 88,
+      "score": 253,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 85,
+      "slack": 21,
+      "drag": 31,
+      "confidence": 68,
+      "score": 166,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "safe rewrite",
+      "signal": 79,
+      "slack": 48,
+      "drag": 16,
+      "confidence": 63,
+      "score": 221,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "change width",
+      "signal": 81,
+      "slack": 41,
+      "drag": 26,
+      "confidence": 62,
+      "score": 187,
+      "lane": "ship"
+    }
+  ]
+}
