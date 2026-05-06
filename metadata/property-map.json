@@ -1,0 +1,28 @@
+{
+  "repo": "copper-dev-config-meter",
+  "language": "Rust",
+  "category": "Developer tools",
+  "goal": "Build a Rust toolkit that studies config behavior through windowed input fixtures, with late-data behavior checks and bounded memory input sets.",
+  "weights": {
+    "signal": 4,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 3
+  },
+  "thresholds": {
+    "ship": 198,
+    "watch": 116
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}
