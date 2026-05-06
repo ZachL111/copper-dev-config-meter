@@ -1,0 +1,32 @@
+{
+  "index": 485,
+  "phase": 2,
+  "batch": 54,
+  "name": "copper-dev-config-meter",
+  "planned_name": "copper-dev-config-meter",
+  "language": "Rust",
+  "category": "Developer tools",
+  "goal": "Build a Rust toolkit that studies config behavior through windowed input fixtures, with late-data behavior checks and bounded memory input sets.",
+  "repository_url": "https://github.com/ZachL111/copper-dev-config-meter",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 156,
+    "risk_penalty": 6,
+    "latency_penalty": 3,
+    "weight_bonus": 6,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
